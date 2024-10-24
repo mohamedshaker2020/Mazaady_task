@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.activities.home.HomeActivity">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/imageCorners"
+            android:src="@drawable/profile_image" />
+
+        <TextView
+            android:id="@+id/welcomeUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/profileImage"
+            app:layout_constraintTop_toTopOf="@id/profileImage"
+            android:text="Hello,Mohamed" />
+
+        <TextView
+            android:id="@+id/rewardPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:drawableStart="@drawable/reward_icon"
+            android:drawablePadding="8dp"
+            android:textColor="#FCD034"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/welcomeUser"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeUser"
+            android:text="+1600 Point" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/onlineFriendsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/profileImage"
+            tools:listitem="@layout/online_friends_item" />
+
+        <TextView
+            android:id="@+id/comingCoursesTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/upcoming_course_of_this_week"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/onlineFriendsRecyclerView"
+            app:layout_constraintTop_toBottomOf="@id/onlineFriendsRecyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tabsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/comingCoursesTV"
+            tools:listitem="@layout/tab_item" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/coursesViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            tools:background="@drawable/courses_image"
+            app:layout_constraintTop_toBottomOf="@+id/tabsRecyclerView" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="8dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/transparent"
+            app:tabIndicatorHeight="0dp"
+            app:tabBackground="@drawable/custom_tab_selector"
+            app:layout_constraintTop_toBottomOf="@id/coursesViewPager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:itemActiveIndicatorStyle="@color/white"
+            app:itemIconSize="32dp"
+            app:itemIconTint="@color/bottom_nav_item_color"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_nav_bar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

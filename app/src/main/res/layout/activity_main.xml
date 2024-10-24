@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.activities.main.MainActivity">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/categoriesTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:hint="@string/categories"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@color/white"
+            app:endIconDrawable="@drawable/down_arrow"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/categoriesSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dropDownHeight="300dp"
+                android:inputType="none"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subCategoriesTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:hint="@string/subcategories"
+            android:textColorHint="@color/black"
+            android:visibility="gone"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@color/white"
+            app:endIconDrawable="@drawable/down_arrow"
+            app:layout_constraintTop_toBottomOf="@id/categoriesTextInput">
+
+            <AutoCompleteTextView
+                android:id="@+id/subCategoriesSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dropDownHeight="300dp"
+                android:inputType="none"
+                android:labelFor="@id/subCategoriesTextInput"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/submitButton"
+            app:layout_constraintTop_toBottomOf="@id/subCategoriesTextInput"
+            tools:listitem="@layout/subcategory_properties" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#999898"
+            android:text="@string/submit"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nextPageBtn"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/nextPageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/to_next_page"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/submitButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AndroidTask</string>
+    <string name="categories">Categories</string>
+    <string name="subcategories">subCategories</string>
+    <string name="home">Home</string>
+    <string name="discover">Discover</string>
+    <string name="message">Message</string>
+    <string name="profile">Profile</string>
+    <string name="upcoming_course_of_this_week">Upcoming course of this week</string>
+    <string name="home_">Home</string>
+    <string name="other">other</string>
+    <string name="text">Enter your text</string>
+    <string name="done">Done</string>
+    <string name="submit">Submit</string>
+    <string name="to_next_page">To Next Page</string>
+</resources>

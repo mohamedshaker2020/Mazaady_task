@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="offer"
+            type="com.coding.androidtask.ui.util.models.Course" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/courseTab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/courseImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imageResource="@{offer.imageResId}"
+            tools:src="@drawable/courses_image" />
+    </LinearLayout>
+</layout>
